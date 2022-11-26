@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="result">Result [...]</string>
+    <string name="ac">AC</string>
+    <string name="parentheses">( )</string>
+    <string name="_pourcentage">%</string>
+    <string name="slash">/</string>
+    <string name="_9">9</string>
+    <string name="multiplication">x</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="minus">-</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="add">+</string>
+    <string name="_0">0</string>
+    <string name="virgule">,</string>
+    <string name="delete">Del</string>
+    <string name="compute">=</string>
+    <string name="_base_10">10</string>
+    <string name="_base_2">2</string>
+    <string name="_base_8">8</string>
+    <string name="_base_16">16</string>
+</resources>

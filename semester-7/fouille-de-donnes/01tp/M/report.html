@@ -1,0 +1,171 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body onload="(function (id) {     setSelectedId(id); scrollToId(id); }(&quot;139969797151904&quot;));">
+
+ 
+
+<div id="139967725100912" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>k-Means <span class="timestamp">mar. sept. 27 22, 17:17:59</span></h1><div class="content">
+<ul><b>Number of clusters:</b> 3<br><b>Optimization:</b> initialize with KMeans++, 10 re-runs limited to 300 steps<br></ul><h2>Data</h2><ul><b>Data instances:</b> 150<br><b>Features:</b> sepal length, sepal width, petal length, petal width<br><b>Target:</b> iris<br></ul></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div><div id="139969797151904" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>CN2 Rule Viewer <span class="timestamp">mar. sept. 27 22, 17:44:01</span></h1><div class="content">
+<h2>Data domain</h2><ul><b>Features:</b> sepal length, sepal width, petal length, petal width<br><b>Target:</b> iris<br></ul><h2>Rule induction algorithm</h2><ul><b>Rule ordering:</b> ordered<br><b>Covering algorithm:</b> exclusive<br><b>Gamma:</b> 0.7<br><b>Evaluation measure:</b> entropy<br><b>Beam width:</b> 5<br><b>Minimum rule coverage:</b> 1<br><b>Maximum rule length:</b> 5<br><b>Default alpha:</b> 1.0<br><b>Parent alpha:</b> 1.0<br></ul><h2>Induced rules</h2><table>
+<tbody><tr><th></th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">IF conditions</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;"></th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">THEN class</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Distribution</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Probabilities [%]</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Quality</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Length</th></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;"></th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">petal length≤3.0 AND
+sepal width≥2.9</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-setosa</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[49, 0, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">96 : 2 : 2</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">1</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">petal width≥1.8 AND
+sepal length≥6.0</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-virginica</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 0, 39]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">2 : 2 : 95</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">2</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal length≥4.9 AND
+sepal width≥3.1</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-versicolor</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 8, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">9 : 82 : 9</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">3</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">petal length≤4.9 AND
+petal width≥1.7</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-virginica</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 0, 2]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">20 : 20 : 60</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">4</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">petal width≥1.8</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-virginica</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 0, 5]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">12 : 12 : 75</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">1</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">5</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">petal length≤5.0 AND
+sepal width≥2.4</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-versicolor</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 35, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">3 : 95 : 3</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">6</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal width≥2.8</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-virginica</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 0, 2]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">20 : 20 : 60</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">1</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">7</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">petal width≤1.0 AND
+sepal length≥5.0</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-versicolor</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 3, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">17 : 67 : 17</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">8</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal width≥2.7</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-versicolor</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 1, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">25 : 50 : 25</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">1</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">9</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal width≥2.6</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-virginica</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 0, 1]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">25 : 25 : 50</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">1</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">10</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal length≥5.5 AND
+sepal length≥6.2</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-versicolor</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 2, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">20 : 60 : 20</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">11</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal length≤5.5 AND
+petal length≥4.0</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-versicolor</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 1, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">25 : 50 : 25</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">2</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">12</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal length≥6.0</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-virginica</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[0, 0, 1]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">25 : 25 : 50</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">1</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">13</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">sepal length≤4.5</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-setosa</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[1, 0, 0]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">50 : 25 : 25</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-0.00</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">1</td></tr><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">14</th><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">TRUE</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">→</td><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">iris=Iris-virginica</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">[50, 50, 50]</td><td style="color:black;border:0;background:transparent;text-align:center;vertical-align:middle;">33 : 33 : 33</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">-1.585</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;"></td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div></body></html>

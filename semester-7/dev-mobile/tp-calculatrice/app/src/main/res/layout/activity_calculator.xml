@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/_toolbarCalculator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateIds,MissingClass" />
+
+
+    <TextView
+        android:id="@+id/_previousResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:gravity="right|center_horizontal|center_vertical"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintBottom_toTopOf="@+id/_result"
+        app:layout_constraintEnd_toEndOf="@+id/_result"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/_result"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="0.3"
+        android:gravity="right|center_horizontal|center_vertical"
+        android:text="@string/result"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
+        android:typeface="normal"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="RtlHardcoded" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="0.7"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/_AC"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/ac"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_parentheses"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:text="@string/parentheses"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_pourc"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:text="@string/_pourcentage"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_div"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:text="@string/slash"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/_seven"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_7"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_eight"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_8"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_nine"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_9"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_multiplication"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/multiplication"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/_four"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_4"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_five"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_5"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_six"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_6"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_minus"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/minus"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/_one"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_1"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_two"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_2"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_three"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_3"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_add"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/add"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/_zero"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/_0"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_virgule"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/virgule"
+                android:textSize="30sp" />
+
+
+            <Button
+                android:id="@+id/_delete"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/delete"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/_compute"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/rounded_button"
+                android:checkable="false"
+                android:text="@string/compute"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

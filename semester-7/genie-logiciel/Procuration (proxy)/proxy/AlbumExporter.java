@@ -1,0 +1,3 @@
+interface AlbumExporter {
+    void displayAlbum();
+}

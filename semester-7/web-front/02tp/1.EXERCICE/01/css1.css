@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+    border: 10px double black;
+}
+
+#pay {
+    color: blue;
+}

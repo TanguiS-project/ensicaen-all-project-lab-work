@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Diaporama</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="diapo">
+            <h1>Diaporama</h1>
+            <img src="" alt="current card" id="img">
+            <table id="diff_input">
+                <tr>
+                    <td>
+                        <button id="previous">Précédent</button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button id="next">Suivant</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="first">Premier</button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button id="last">Dernier</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="current"> </label>
+                        <input type="number" id="current" name="current" min="1" max="52" value="1">
+                    </td>
+                    <td>
+                        <label for="max"> De </label>
+                    </td>
+                    <td>
+                        <input type="number" id="max" name="max" min="1" max="52" value="52">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="./js.js" async defer></script>
+    </body>
+</html>
