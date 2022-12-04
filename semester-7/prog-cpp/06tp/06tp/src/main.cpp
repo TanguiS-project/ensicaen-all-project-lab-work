@@ -69,6 +69,8 @@ int main( void ) {
     cout << "Vector sorted : ";
     displayIterable( vectToSort->begin(), vectToSort->end() );
 
+    delete vectToSort;
+
     cout << "V2 : " << endl;
     vectToSort = sortVector<int, vector<int>, greater<int>>( vect );
     cout << "Vector<int> to sort : ";
@@ -83,6 +85,9 @@ int main( void ) {
     displayIterable( vect_double.begin(), vect_double.end() );
     cout << "Vector<double> sorted : ";
     displayIterable( vect_double_sort->begin(), vect_double_sort->end() );
+
+    delete vect_double_sort;
+    delete vectToSort;
 
     cout << "\n\n   4. Tableaux associatifs" << endl;
 
