@@ -21,12 +21,26 @@
 
 #include <vector>
 #include <queue>
+#include <list>
+#include <functional>
 
 std::vector<int>* sortVector( const std::vector<int> & vToSort );
 
-/* template<typename T>
-std::vector<T> sortVector( std::vector<T> vToSort ) {
-    std::priority_queue<T> 
-} */
+template<typename T,
+         typename Sequence = std::vector<T>,
+         typename Compare = std::less<typename Sequence::value_type>>
+Sequence* sortVector( const Sequence & toSort ) {
+    std::priority_queue<T, Sequence, Compare> pQueue;
+    Sequence* result = new std::vector<T>();
+
+    for ( typename Sequence::const_iterator it = toSort.begin(); it != toSort.end(); it++ ) {
+        pQueue.push( *it );
+    }
+    while ( !pQueue.empty() ) {
+        result->push_back( pQueue.top() );
+        pQueue.pop();
+    }
+    return result;
+}
 
 #endif /* __SORT_HH__ */

@@ -6,7 +6,7 @@ LIB_PATH = ./lib
 EXEC = main
 
 CXX = g++
-CXXFLAGS = -Wall -Wextra
+CXXFLAGS = -Wall -Wextra -pedantic -g
 LDFLAGS = 
 CPPFLAGS = -I$(INC_PATH) -L$(LIB_PATH)
 
@@ -32,7 +32,7 @@ run :
 
 zip : distclean
 	rm -fr ./.vscode ./.git ./.gitignore
-	cd ../ && cp -r ./tp06 ./Picque_Steimetz
+	cd ../ && cp -r ./06tp ./Picque_Steimetz
 	cd ../Picque_Steimetz && find . -type f > ../Picque_Steimetz/files.txt
 	cd ../ && zip -r ./Picque_Steimetz.zip ./Picque_Steimetz
 	rm -r ../Picque_Steimetz

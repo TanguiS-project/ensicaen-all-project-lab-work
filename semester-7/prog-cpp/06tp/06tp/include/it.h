@@ -21,7 +21,9 @@
 
 #include <vector>
 #include <set>
+#include <list>
 #include <iostream>
+#include <iterator>
 
 std::vector<int> randIntFillingVector(); 
 
