@@ -46,11 +46,10 @@ bool isSubset( ItLeft leftBegin, ItLeft leftEnd, ItRight rightBegin, ItRight rig
 }
 
 template<typename T,
-         typename Sequence,
          typename Iterator,
-         typename Compare = std::less<typename Sequence::value_type>>
+         typename Compare = std::less<T>>
 void sortContainers( Iterator begin, Iterator end ) {
-    std::priority_queue<T, Sequence, Compare> pQueue;
+    std::priority_queue<T, std::vector<T>, Compare> pQueue;
     Iterator current;
     for ( current = begin; current != end; current++ ) {
         pQueue.push( *current );
