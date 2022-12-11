@@ -4,5 +4,4 @@
     <item android:title="@string/_base_10" />
     <item android:title="@string/_base_2" />
     <item android:title="@string/_base_8" />
-    <item android:title="@string/_base_16" />
 </menu>

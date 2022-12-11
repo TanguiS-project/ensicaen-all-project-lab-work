@@ -23,11 +23,16 @@
         android:id="@+id/_previousResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginRight="15dp"
+        android:background="#D3D3D3"
         android:gravity="right|center_horizontal|center_vertical"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintBottom_toTopOf="@+id/_result"
         app:layout_constraintEnd_toEndOf="@+id/_result"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="RtlHardcoded" />
 
     <TextView
@@ -48,7 +53,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/_toolbarCalculator"
         tools:ignore="RtlHardcoded" />
 
     <LinearLayout
@@ -78,7 +83,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_ac"
                 android:checkable="false"
                 android:text="@string/ac"
                 android:textSize="30sp" />
@@ -94,7 +99,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operator"
                 android:text="@string/parentheses"
                 android:textSize="30sp" />
 
@@ -109,7 +114,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operator"
                 android:text="@string/_pourcentage"
                 android:textSize="30sp" />
 
@@ -124,7 +129,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operator"
                 android:text="@string/slash"
                 android:textSize="30sp" />
 
@@ -146,7 +151,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_7"
                 android:textSize="30sp" />
@@ -162,7 +167,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_8"
                 android:textSize="30sp" />
@@ -178,7 +183,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_9"
                 android:textSize="30sp" />
@@ -194,7 +199,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operator"
                 android:checkable="false"
                 android:text="@string/multiplication"
                 android:textSize="30sp" />
@@ -217,7 +222,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_4"
                 android:textSize="30sp" />
@@ -233,7 +238,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_5"
                 android:textSize="30sp" />
@@ -249,7 +254,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_6"
                 android:textSize="30sp" />
@@ -265,7 +270,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operator"
                 android:checkable="false"
                 android:text="@string/minus"
                 android:textSize="30sp" />
@@ -288,7 +293,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_1"
                 android:textSize="30sp" />
@@ -304,7 +309,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_2"
                 android:textSize="30sp" />
@@ -320,7 +325,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_3"
                 android:textSize="30sp" />
@@ -336,7 +341,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operator"
                 android:checkable="false"
                 android:text="@string/add"
                 android:textSize="30sp" />
@@ -359,7 +364,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/_0"
                 android:textSize="30sp" />
@@ -375,7 +380,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/virgule"
                 android:textSize="30sp" />
@@ -392,7 +397,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operand"
                 android:checkable="false"
                 android:text="@string/delete"
                 android:textSize="30sp" />
@@ -408,7 +413,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="0.25"
-                android:background="@drawable/rounded_button"
+                android:background="@drawable/rounded_button_operator"
                 android:checkable="false"
                 android:text="@string/compute"
                 android:textSize="30sp" />

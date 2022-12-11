@@ -1,18 +1,21 @@
 package fr.ensicaen.st.helloword.Calculatrice;
 
+import android.widget.Button;
+
+import java.util.Map;
+
 import javax.script.ScriptException;
 
 public class PresenterCalculator {
     private StringBuilder _currentInput;
     private StringBuilder _lastInputWithResult;
     private short _numberParenthesesOpened;
-    private boolean _isFirstParenthesis;
-
+    private static Base _baseChain;
 
     public PresenterCalculator() {
         _currentInput = new StringBuilder();
         _numberParenthesesOpened = 0;
-        _isFirstParenthesis = true;
+        _baseChain = new Base(2).setNext(new Base(8).setNext(new Base(10)));
     }
 
     static private boolean isOperator( char input ) {
@@ -63,68 +66,95 @@ public class PresenterCalculator {
 
         switch (text) {
             case "=":
-                if ( _currentInput.length() == 0 || isFloat(_currentInput.toString()) ) {
-                    if ( _lastInputWithResult.length() == 0 ) {
-                        break;
-                    }
-                    _currentInput = new StringBuilder(_lastInputWithResult.toString().split("=")[1].trim());
-                    throw new ComputeIsDoneException();
-                }
-                _lastInputWithResult = new StringBuilder(_currentInput);
-                _currentInput = new StringBuilder(Float.toString(Calculator.compute( toValidOperation())));
-                _lastInputWithResult.append(" = ").append(_currentInput);
-                System.out.println(_lastInputWithResult);
-                throw new ComputeIsDoneException();
+                manageComputingAction();
+                break;
             case "AC":
-                _currentInput = new StringBuilder();
-                _isFirstParenthesis = true;
+                manageClearingAction();
                 break;
             case "Del":
-                if ( _currentInput.length() == 0 ) {
-                    break;
-                }
-                _currentInput.deleteCharAt(_currentInput.length()-1);
+                manageDeletingAction();
                 break;
             case "( )":
-                char lastInput = _currentInput.charAt(_currentInput.length()-1);
-                if ( isOperator(lastInput) || isOpenParenthesis(lastInput) ) {
-                    _numberParenthesesOpened++;
-                    _currentInput.append("(");
-                    break;
-                }
-                if ( (isOperand(lastInput) || isCloseParenthesis(lastInput)) && (_numberParenthesesOpened) == 0 ) {
-                    _numberParenthesesOpened++;
-                    _currentInput.append("x(");
-                    break;
-                }
-                if ( _numberParenthesesOpened  != 0 ) {
-                    _numberParenthesesOpened--;
-                    _currentInput.append(")");
-                } else {
-                    _numberParenthesesOpened++;
-                    _currentInput.append("(");
-                }
+                manageParenthesisAction();
                 break;
             case ",":
-                if(_currentInput.length() == 0 ) {
-                    _currentInput.append("0");
-                } else if ( !isVirguleAuthorised() ) {
-                    break;
-                }
-                _currentInput.append(".");
+                manageComaAction();
                 break;
             default:
-                if ( _currentInput.length() == 0 && text.charAt(0) != '-' && !isOperand(text.charAt(0)) ) {
-                    break;
-                } else if ( _currentInput.length() == 1 && _currentInput.charAt(0) == '-' && isOperator(text.charAt(0))) {
-                    break;
-                }
-                if ( isLastInputIsOperatorAndInputIsOperator(text.charAt(0)) ) {
-                    _currentInput.deleteCharAt(_currentInput.length()-1);
-                }
-                _currentInput.append(text);
+                manageDigitAction(text);
                 break;
         }
+    }
+
+    private void manageDigitAction(String text) {
+        if ( _currentInput.length() == 0 && text.charAt(0) != '-' && !isOperand(text.charAt(0)) ) {
+            return;
+        } else if ( _currentInput.length() == 1 && _currentInput.charAt(0) == '-' && isOperator(text.charAt(0))) {
+            return;
+        }
+        if ( isLastInputIsOperatorAndInputIsOperator(text.charAt(0)) ) {
+            _currentInput.deleteCharAt(_currentInput.length()-1);
+        }
+        _currentInput.append(text);
+    }
+
+    private void manageComaAction() {
+        if(_currentInput.length() == 0 ) {
+            _currentInput.append("0");
+        } else if ( !isVirguleAuthorised() ) {
+            return;
+        }
+        _currentInput.append(".");
+    }
+
+    private void manageParenthesisAction() {
+        if ( _currentInput.length() == 0 ) {
+            return;
+        }
+        char lastInput = _currentInput.charAt(_currentInput.length()-1);
+        if ( isOperator(lastInput) || isOpenParenthesis(lastInput) ) {
+            _numberParenthesesOpened++;
+            _currentInput.append("(");
+            return;
+        }
+        if ( (isOperand(lastInput) || isCloseParenthesis(lastInput)) && (_numberParenthesesOpened) == 0 ) {
+            _numberParenthesesOpened++;
+            _currentInput.append("x(");
+            return;
+        }
+        if ( _numberParenthesesOpened  != 0 ) {
+            _numberParenthesesOpened--;
+            _currentInput.append(")");
+        } else {
+            _numberParenthesesOpened++;
+            _currentInput.append("(");
+        }
+    }
+
+    private void manageDeletingAction() {
+        if ( _currentInput.length() == 0 ) {
+            return;
+        }
+        _currentInput.deleteCharAt(_currentInput.length()-1);
+    }
+
+    private void manageClearingAction() {
+        _currentInput = new StringBuilder();
+    }
+
+    private void manageComputingAction() throws ComputeIsDoneException, ScriptException {
+        if ( _currentInput.length() == 0 || isFloat(_currentInput.toString()) ) {
+            if ( _lastInputWithResult.length() == 0 ) {
+                return;
+            }
+            _currentInput = new StringBuilder(_lastInputWithResult.toString().split("=")[1].trim());
+            throw new ComputeIsDoneException();
+        }
+        _lastInputWithResult = new StringBuilder(_currentInput);
+        _currentInput = new StringBuilder(Float.toString(Calculator.compute( toValidOperation())));
+        _lastInputWithResult.append(" = ").append(_currentInput);
+        System.out.println(_lastInputWithResult);
+        throw new ComputeIsDoneException();
     }
 
     private String toValidOperation() {
@@ -135,6 +165,10 @@ public class PresenterCalculator {
         }
         System.out.println(_currentInput.toString());
         return _currentInput.toString();
+    }
+
+    public void changeBase(String newBaseFromMenuItem, Map<String, Button> buttonMap) {
+        _baseChain.handleRequest(Integer.parseInt(newBaseFromMenuItem), buttonMap);
     }
 
     public String updateResult() {
